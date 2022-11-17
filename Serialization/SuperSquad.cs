@@ -1,24 +1,39 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.Serialization;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Serialization;
+using System;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
+using Newtonsoft.Json.Converters;
 
 namespace Serialization
 {
+    
     [Serializable]
-    internal class SuperSquad /*: ISerializable*/
+    public class SuperSquad /*: ISerializable*/
     {
-        public string? squadName;
-        public string? homeTown;
-        public int formed;
-        public string? secretBase;
-        public bool active;
+        
+        public string? squadName { get; set; }
+        public string? homeTown { get; set; }
+        public int? formed { get; set; }
+        public string? secretBase { get; set; }
+        public bool? active { get; set; }
         List<Members>? members { get; set; }
 
-        
-        
+
+        public SuperSquad() { }
+
+        //public override string? ToString() =>
+        //     string.Join(Environment.NewLine, new string[]
+        //     {
+        //        $"Squad \"{squadName}\":",
+        //        $"Home town : {homeTown}, Formed : {formed}, Secret base : {secretBase}, {((bool)active ? "Active" : "Not active")}",
+        //        "Members:",
+        //        string.Join(Environment.NewLine, members)
+        //     });
+
+
+
+
+
 
         //public void GetObjectData(SerializationInfo info, StreamingContext context)
         //{
@@ -42,7 +57,7 @@ namespace Serialization
         //public void ViewBaseInfo()
         //{
         //   Console.WriteLine($"Squad name: {squadName}, home town: {homeTown}, its formed in: {formed}, secret name: {secretBase}, is it active:{active}");
-            
+
         //    if (members != null)
         //    {
         //        foreach(object member in members)
