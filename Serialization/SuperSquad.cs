@@ -16,7 +16,7 @@ namespace Serialization
         public int? formed { get; set; }
         public string? secretBase { get; set; }
         public bool? active { get; set; }
-        List<Members>? members { get; set; }
+        public List<Members>? members { get; set; }
 
 
         public SuperSquad() { }

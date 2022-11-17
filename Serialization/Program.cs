@@ -6,24 +6,24 @@ using Newtonsoft.Json.Converters;
 using System.IO;
 using System.Text.Json;
 
-string jsonFile = @"E:\Super hero squad.json";
+string jsonFile = @"D:\Super hero squad.json";
 
-StreamReader reader = new StreamReader(jsonFile);
-var readedFile = reader.ReadToEnd();
+//StreamReader reader = new StreamReader(jsonFile);
+//var readedFile = reader.ReadToEnd();
 
 
-SuperSquad? superSquad = JsonConvert.DeserializeObject<SuperSquad?>(readedFile);
+//SuperSquad? superSquad = JsonConvert.DeserializeObject<SuperSquad?>(readedFile);
 
 
 
 
 //string jsonString = File.ReadAllText(jsonFile);
-//var options = new JsonSerializerOptions
-//{
-//    PropertyNameCaseInsensitive = true,
-//    IncludeFields = true,
-//    WriteIndented = true
-//};
+var options = new JsonSerializerOptions
+{
+    PropertyNameCaseInsensitive = true,
+    IncludeFields = true,
+    WriteIndented = true
+};
 
 
 //var ser = new DataContractJsonSerializer(typeof(SuperSquad));
@@ -32,10 +32,11 @@ SuperSquad? superSquad = JsonConvert.DeserializeObject<SuperSquad?>(readedFile);
 //    var newSquad = ser.ReadObject(openStream) as SuperSquad;
 //}
 
-//using FileStream openStream = File.OpenRead(jsonFile);
+using (FileStream openStream = new FileStream(jsonFile, FileMode.Open, FileAccess.Read))
+{
 
-//SuperSquad? superSquad = System.Text.Json.JsonSerializer.Deserialize<SuperSquad>(jsonFile, options);
-
+    SuperSquad? superSquad = System.Text.Json.JsonSerializer.Deserialize<SuperSquad>(openStream, options);
+}
 
 
 

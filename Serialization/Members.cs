@@ -13,7 +13,7 @@ namespace Serialization
         public string? name { get; set; }
         public int? age { get; set; }
         public string? secretIdentity { get; set; }
-        List<string>? powers { get; set; }
+        public List<string>? powers { get; set; }
 
         public Members() { }
         //public override string ToString() => string.Join(Environment.NewLine, new string[]
