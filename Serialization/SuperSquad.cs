@@ -19,16 +19,16 @@ namespace Serialization
         public List<Members>? members { get; set; }
 
 
-        public SuperSquad() { }
 
-        //public override string? ToString() =>
-        //     string.Join(Environment.NewLine, new string[]
-        //     {
-        //        $"Squad \"{squadName}\":",
-        //        $"Home town : {homeTown}, Formed : {formed}, Secret base : {secretBase}, {((bool)active ? "Active" : "Not active")}",
-        //        "Members:",
-        //        string.Join(Environment.NewLine, members)
-        //     });
+
+        public override string? ToString() =>
+             string.Join(Environment.NewLine, new string[]
+             {
+                $"Squad \"{squadName}\":",
+                $"Home town : {homeTown}, Formed : {formed}, Secret base : {secretBase}, {((bool)active ? "Active" : "Not active")}",
+                "Members:",
+                string.Join(Environment.NewLine, members)
+             });
 
 
 

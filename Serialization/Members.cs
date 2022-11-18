@@ -15,11 +15,11 @@ namespace Serialization
         public string? secretIdentity { get; set; }
         public List<string>? powers { get; set; }
 
-        public Members() { }
-        //public override string ToString() => string.Join(Environment.NewLine, new string[]
-        //{
-        //    $"{name}: Age: {age}, Secret Identity: {secretIdentity}, Super Powers: ({string.Join(", ", powers)}"
-        //});
+
+        public override string ToString() => string.Join(Environment.NewLine, new string[]
+        {
+            $"\n\t{name}: \nAge: {age}, \nSecret Identity: {secretIdentity}, \nSuper Powers: \n{string.Join(", \n", powers)}"
+        });
 
 
 
